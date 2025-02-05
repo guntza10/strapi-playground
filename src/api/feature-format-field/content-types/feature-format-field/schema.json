@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_format_fields",
+  "info": {
+    "singularName": "feature-format-field",
+    "pluralName": "feature-format-fields",
+    "displayName": "Feature Format Field",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feature": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature.feature"
+    },
+    "format": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::format.format"
+    },
+    "field": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::field.field"
+    }
+  }
+}

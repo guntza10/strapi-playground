@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "features",
+  "info": {
+    "singularName": "feature",
+    "pluralName": "features",
+    "displayName": "Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "report_module": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::report-module.report-module"
+    },
+    "report_templates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::report-template.report-template"
+    },
+    "fields": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::field.field",
+      "mappedBy": "features"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_templates",
+  "info": {
+    "singularName": "report-template",
+    "pluralName": "report-templates",
+    "displayName": "Report Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

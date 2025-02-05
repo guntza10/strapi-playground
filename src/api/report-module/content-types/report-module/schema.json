@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_modules",
+  "info": {
+    "singularName": "report-module",
+    "pluralName": "report-modules",
+    "displayName": "Report Module",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature.feature"
+    }
+  }
+}

@@ -22,16 +22,6 @@
       "required": true,
       "unique": true
     },
-    "report_module": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::report-module.report-module"
-    },
-    "report_templates": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::report-template.report-template"
-    },
     "fields": {
       "type": "relation",
       "relation": "manyToMany",

@@ -22,9 +22,9 @@
       "relation": "oneToOne",
       "target": "api::format.format"
     },
-    "field": {
+    "fields": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::field.field"
     }
   }

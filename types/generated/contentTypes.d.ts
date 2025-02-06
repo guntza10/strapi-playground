@@ -420,7 +420,7 @@ export interface ApiFeatureFormatFieldFeatureFormatField
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     feature: Schema.Attribute.Relation<'oneToOne', 'api::feature.feature'>;
-    field: Schema.Attribute.Relation<'oneToOne', 'api::field.field'>;
+    fields: Schema.Attribute.Relation<'oneToMany', 'api::field.field'>;
     format: Schema.Attribute.Relation<'oneToOne', 'api::format.format'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -464,14 +464,6 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
-    report_module: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::report-module.report-module'
-    >;
-    report_templates: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::report-template.report-template'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -531,10 +523,6 @@ export interface ApiFormatFormat extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
-    report_templates: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::report-template.report-template'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -594,6 +582,8 @@ export interface ApiReportTemplateReportTemplate
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
+    feature: Schema.Attribute.Relation<'oneToOne', 'api::feature.feature'>;
+    format: Schema.Attribute.Relation<'oneToOne', 'api::format.format'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

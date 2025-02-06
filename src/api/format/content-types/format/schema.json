@@ -16,11 +16,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "report_templates": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::report-template.report-template"
     }
   }
 }

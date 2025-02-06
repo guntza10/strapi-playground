@@ -17,9 +17,6 @@
       "required": true,
       "unique": true
     },
-    "description": {
-      "type": "blocks"
-    },
     "feature": {
       "type": "relation",
       "relation": "oneToOne",
@@ -29,6 +26,24 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::format.format"
+    },
+    "report_module": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::report-module.report-module"
+    },
+    "report_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::report-type.report-type"
+    },
+    "description": {
+      "type": "text"
+    },
+    "fields": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::field.field"
     }
   }
 }

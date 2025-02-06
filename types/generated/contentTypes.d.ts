@@ -581,8 +581,9 @@ export interface ApiReportTemplateReportTemplate
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
+    description: Schema.Attribute.Text;
     feature: Schema.Attribute.Relation<'oneToOne', 'api::feature.feature'>;
+    fields: Schema.Attribute.Relation<'oneToMany', 'api::field.field'>;
     format: Schema.Attribute.Relation<'oneToOne', 'api::format.format'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -594,6 +595,14 @@ export interface ApiReportTemplateReportTemplate
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
+    report_module: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::report-module.report-module'
+    >;
+    report_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::report-type.report-type'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
